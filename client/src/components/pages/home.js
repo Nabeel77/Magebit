@@ -75,7 +75,7 @@ const Home = () => {
   }, [])
 
   const saveEmail = useCallback(() => {
-    if (checkTermsAndConditonsCheck()) {
+    if (checkTermsAndConditonsCheck() ) {
       fetch('/api/emails', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

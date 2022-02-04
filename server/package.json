@@ -5,7 +5,7 @@
   "type": "commonjs",
   "scripts": {
     "start": "concurrently \"npm run server\" \"cd ../client && npm start\"",
-    "server": "babel-node index.js",
+    "server": "node -r esm index.js",
     "init-db": "cross-env NODE_ENV=production node -r esm ./database/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
