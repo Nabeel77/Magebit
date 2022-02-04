@@ -50,6 +50,10 @@
                     margin-top: 200px;
                     margin-left: 40px;
                 }
+                @include breakpoint(xl) {
+                    font-size: 1.5vw;
+                    margin-top: 340px;
+                }
             }
     
             .subText {
@@ -60,9 +64,14 @@
                 font-size: 16px;
                 font-size: 3vw;
                 line-height: 1.5em;
+
                 @include breakpoint(l) {
                     font-size: 1.3vw;
                     margin-left: 40px;
+                }
+
+                @include breakpoint(xl) {
+                    font-size: 1.05vw;
                 }
             }
 
