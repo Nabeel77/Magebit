@@ -144,7 +144,7 @@ const DisplyEmailsData = () => {
             </div>
         </>
     ) 
-    : <h1>Loading...</h1>
+    : <h1>There might be no emails added. Please add data or wait for data loading....</h1>
 
     return (
         <div className={classes.container}>
