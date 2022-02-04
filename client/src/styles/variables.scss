@@ -1,0 +1,51 @@
+//Fonts
+$Arial: 'Arial';
+$Georgia: 'Georgia';
+
+// colors
+$navyBlue: #4066A5;
+$dark: #131821;
+$darkGray: #6A707B;
+$lightGray: #E3E3E4;
+$background: #F2F5FA;
+$normalIconColor: #9A9DA3;
+$white: #FFFFFF;
+$facebookHoverBackgroundColor: #4267B2;
+$facebookPressedBackgroundColor: #2F4A80;
+$instagramHoverBackgroundColor: #C13584;
+$instagramPressedBackgroundColor: #8F2762;
+$twitterHoverBackgroundColor: #1DA1F2;
+$twitterPressedBackgroundColor: #177FBF;
+$youtubeHoverBackgroundColor: #FF0000;
+$youtubePressedBackgroundColor: #CC0000;
+$iconHoverAndPressedShadowColor: #E2E3E4;
+
+
+//icons
+$iconStroke: 1px solid #E2E3E4;
+$borderRadius: 50%;
+
+//font sizes
+$desktop: 16px;
+$laptop: 12px;
+
+//border
+$borderLeft: 4px solid $navyBlue;
+
+//mixin to use media query across the app
+@mixin breakpoint($point) {
+    @if $point == md {
+        @media (max-width: 991px) {
+            @content;
+        }
+    } @else if $point == l {
+        @media (min-width: 992px) {
+            @content;
+        }
+    }
+    @else if $point == xl {
+        @media (min-width: 1600px) {
+            @content;
+        }
+    }
+}

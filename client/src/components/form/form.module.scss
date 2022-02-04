@@ -1,0 +1,56 @@
+@import "../../styles/variables.scss";
+
+.formContainer {
+    width: 90%;
+    height: 25%;
+    margin-top: 20px;
+    background-color: $white;
+    display: flex;
+    border: 1px solid $lightGray;
+    border-left: $borderLeft;
+
+    @include breakpoint(l) {
+        width: 120%;
+        height: 30%;
+        margin-top: 40px;
+    }
+
+    @include breakpoint(xl) {
+        height: 12%;
+        margin-top: 60px;
+    }
+
+    &:hover {
+        border: 1px solid $navyBlue;
+        box-shadow: 0 8px 13px -2px gray;
+    }
+        
+    &:focus {
+        box-shadow: 0 4px 2px -2px gray;
+    }
+
+     .inputField {
+        flex: 1;
+        width: 100%;
+        height: 100%;
+        font-family: $Arial;
+        color: $darkGray;
+        padding-left: 15px;
+        font-size: 3vw;
+        border: none !important;
+        @include breakpoint(l) {
+            font-size: 1vw;
+            padding-left: 35px;
+        }
+     }
+
+     button {
+        flex: 0.2;
+        border: none !important;
+        height: 100%;
+        background-color: $white;
+     }
+
+}
+ 
+ 

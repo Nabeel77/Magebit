@@ -1,0 +1,13 @@
+@import "../../styles/variables.scss";
+
+   
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 2rem auto;
+
+    th, td {
+        border-top: 1px solid #ddd;
+        padding: 10px;
+    }
+}    

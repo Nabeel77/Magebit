@@ -1,0 +1,104 @@
+@import "../../styles/variables.scss";
+
+
+
+.container {
+    margin-left: -10px;
+    @include breakpoint(l) {
+        margin-left: 40px;
+        margin-top: 20px;
+    }
+
+    [type='checkbox'] {
+        opacity: 0;
+    }
+        
+    label {
+        font-family: $Arial;
+        font-size: 3vw;
+        position: relative;
+        padding-left: 35px;
+        display: inline-block;
+        color: $darkGray;
+        line-height: 25px;
+    
+        span {
+            text-decoration: underline;
+            color: $dark;
+        }
+    
+        @include breakpoint(l) {
+            font-size: 1.3vw;
+            padding-left: 55px;
+            padding-top: 4px;
+        }
+    }
+    
+    [type='checkbox'] {
+        cursor: pointer;
+    }
+    
+    [type='checkbox'] + label::before { //box 
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        border-radius: 3px;
+        outline: 1px solid $lightGray;
+        background: white;
+        @include breakpoint(l) {
+            width: 25px;
+            height: 25px;
+        }
+        @include breakpoint(xl) {
+            width: 30px;
+            height: 30px;
+        }
+    }
+    
+    [type='checkbox']:checked + label::before { // checkmark 
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        outline: none;
+        background: $navyBlue;
+        @include breakpoint(l) {
+            width: 25px;
+            height: 25px;
+        }
+        @include breakpoint(xl) {
+            width: 30px;
+            height: 30px;
+        }
+    }
+    
+    [type='checkbox']:checked + label::after { // checkmark 
+        content: '';
+        position: absolute;
+        left: 3px;
+        top: 3px;
+        width: 15px;
+        height: 15px;
+        background-image: url('../../svgs/ic_checkmark.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        @include breakpoint(l) {
+            left: 5px;
+            top: 7px;
+        }
+        @include breakpoint(xl) {
+            width: 20px;
+            height: 20px;
+            left: 4px;
+            top: 7px;
+        }
+    }
+    
+}
+
+
