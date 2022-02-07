@@ -45,9 +45,7 @@ const DisplyEmailsData = () => {
           .then((res) =>  {
             setEmailsArr(res.emails)
           })
-          .catch(err => {
-            
-          })
+          .catch(err => {console.log(err)})
     }, [emailsArr, filteredEmails, searchedEmailArr])
 
     const extractProviders = useCallback((emails) => {
@@ -59,6 +57,7 @@ const DisplyEmailsData = () => {
     }, []);
 
     const handleFilterButtonClick = useCallback((e) => {
+        setSelectedEmails([]);
         setFilteredEmails(() => emailsArr.filter(item => item.provider === e.target.id) )
     }, [emailsArr])
 
@@ -67,6 +66,7 @@ const DisplyEmailsData = () => {
     }, [])
 
     const handleSearchInput = useCallback((e) => {
+        setSelectedEmails([]);
         if (e.target.value) {
             filteredEmails && filteredEmails.length ? 
             setSearchedEmailArr(filteredEmails.filter((item) => item.email.includes(e.target.value))) 
@@ -75,7 +75,6 @@ const DisplyEmailsData = () => {
             setSearchedEmailArr(null);
         }
     },[emailsArr, filteredEmails])
-
 
     useEffect(() => {
         fetch('/api/emails', {
@@ -86,9 +85,7 @@ const DisplyEmailsData = () => {
             extractProviders(res.emails);
             setEmailsArr(res.emails)
           })
-          .catch(err => {
-            
-          })
+          .catch(err => {console.log(err)})
     }, [])
 
     useEffect(() => {

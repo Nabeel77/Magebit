@@ -35,6 +35,24 @@ const Table = ({ emails, columns, handleSelectedRow, handleDelete }) => {
 const TableHeaderItem = ({ item } ) => <th>{item.heading}</th>
 const TableRow = ({ item, index, handleSelectedRow, handleDelete }) => {
     const items = Object.values(item);
+    items.push(
+        <input 
+            type="checkbox" 
+            name="checkbox" 
+            className={classes.checkBox} 
+            id={index}
+            onChange={handleSelectedRow}
+        />
+    );
+    items.push(
+        <button 
+                    className={classes.delete} 
+                    onClick={handleDelete}
+                    id={index}
+                >
+                    Delete
+        </button>
+    );
     return (
         <tr>
             {
@@ -46,22 +64,10 @@ const TableRow = ({ item, index, handleSelectedRow, handleDelete }) => {
             })
             }
             <td>
-                <input 
-                    type="checkbox" 
-                    name="checkbox" 
-                    className={classes.checkBox} 
-                    id={index}
-                    onChange={handleSelectedRow}
-                />
+                
             </td>
             <td>
-                <button 
-                    className={classes.delete} 
-                    onClick={handleDelete}
-                    id={index}
-                >
-                    Delete
-                </button>
+                
             </td>
         </tr>
     )
